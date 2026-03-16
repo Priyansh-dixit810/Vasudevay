@@ -1,0 +1,25 @@
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
+
+type Theme = "light" | "dark";
+
+interface ThemeStore {
+  theme: Theme;
+  toggleTheme: () => void;
+}
+
+export const useThemeStore = create<ThemeStore>()(
+  persist(
+    (set) => ({
+      theme: "dark",
+      toggleTheme: () =>
+        set((s) => ({
+          theme: s.theme === "dark" ? "light" : "dark",
+        })),
+    }),
+    {
+      name: "Vasudevay-storage",
+      storage: createJSONStorage(() => sessionStorage),
+    },
+  ),
+);
