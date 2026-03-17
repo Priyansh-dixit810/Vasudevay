@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 function IntroLoader({ onFinish }: { onFinish: () => void }) {
-  const text = "Vasudevay".split("");
+  const text = "Oskad".split("");
   const isDark = useThemeStore((s)=> s.theme) === "dark";
   useEffect(() => {
     const finish = setTimeout(() => {
@@ -22,7 +22,7 @@ function IntroLoader({ onFinish }: { onFinish: () => void }) {
       className={`h-screen  flex items-center justify-center ${isDark? "bg-black text-white" : "bg-white text-black"}`}
     >
       <div className="flex flex-col items-center">
-        <motion.h1 className="text-5xl font-light tracking-widest">
+        <motion.h1 className="text-5xl font-light tracking-[0.2rem] uppercase ">
           {text.map((letter, index) => (
             <motion.span
               key={index}
