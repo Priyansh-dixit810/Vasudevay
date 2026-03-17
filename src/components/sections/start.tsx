@@ -18,8 +18,8 @@ export default function Start() {
           <Image
             src={
               isDark
-                ? "/images/dark_livingroom.png"
-                : "/images/light_livingroom.png"
+                ? "/images/darklivingroom.png"
+                : "/images/lightlivingroom.png"
             }
             alt="Living-room"
             fill
