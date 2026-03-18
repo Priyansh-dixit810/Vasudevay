@@ -1,13 +1,19 @@
 "use client";
 
+import { useLoadingStore } from "@/store/loading";
 import { useThemeStore } from "@/store/theme";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Header() {
   const toggleTheme = useThemeStore((s) => s.toggleTheme);
   const isDark = useThemeStore((s) => s.theme) === "dark";
+  const pathname = usePathname();
+  const hasFinishedLoading = useLoadingStore((s)=>s.hasFinishedLoading);
+  const shouldShow = pathname !== "/" || hasFinishedLoading;
 
+  if (!shouldShow) return null;
+  
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}

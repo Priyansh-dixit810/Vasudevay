@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation"; 
 import { Instagram, Linkedin, Twitter } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
@@ -13,7 +14,7 @@ const playfair = Playfair_Display({
 
 export default function About() {
   const isDark = useThemeStore((s) => s.theme) === "dark";
-
+  const router = useRouter();
   const teamMembers = [
     {
       src: "/images/me.png",
@@ -95,7 +96,8 @@ export default function About() {
             >
               <div className={`group relative aspect-6/5 sm:aspect-4/5 md:aspect-4/3 overflow-hidden rounded-sm shadow-2xl ${
                 isDark ? "bg-neutral-900" : "bg-gray-200"
-              }`}>
+              }`}
+              onClick={()=> router.push("/about")}>
                 <Image
                   src={member.src}
                   alt={member.name}

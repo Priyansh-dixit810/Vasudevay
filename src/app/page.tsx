@@ -3,25 +3,24 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import IntroLoader from "@/components/sections/intro-loader";
-import Header from "@/components/layout/header";
 import Hero from "@/components/sections/hero";
 import { useThemeStore } from "@/store/theme";
 import SectionWrapper from "@/components/ui/section-wrapper";
 import Start from "@/components/sections/start";
 import About from "@/components/sections/about";
-import Footer from "@/components/layout/footer";
+import { useLoadingStore } from "@/store/loading";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
   const isDark = useThemeStore((s) => s.theme) === "dark";
-
+  const setFinished = useLoadingStore((s) => s.setFinished);
   return (
     <main
       className={`min-h-screen transition-colors duration-700 ${isDark ? "bg-black/70 text-white" : "bg-white text-black"}`}
     >
       <AnimatePresence mode="wait">
         {loading ? (
-          <IntroLoader key="loader" onFinish={() => setLoading(false)} />
+          <IntroLoader key="loader" onFinish={() => {setLoading(false); setFinished()}} />
         ) : (
           <motion.div
             key="content"
@@ -30,28 +29,20 @@ export default function Page() {
             transition={{ duration: 1 }}
             className="relative h-full"
           >
-            <Header />
-
             <SectionWrapper id="hero">
-              {" "}
-              <Hero />{" "}
+              <Hero /> 
             </SectionWrapper>
 
             <SectionWrapper id="start">
-              {" "}
-              <Start />{" "}
+               
+              <Start /> 
             </SectionWrapper>
 
-            {/* About can now grow as long as it needs to */}
             <SectionWrapper id="aboutus">
-              {" "}
-              <About />{" "}
+               
+              <About /> 
             </SectionWrapper>
 
-            {/* The Footer stays below everything naturally */}
-            <div className="snap-start">
-              <Footer />
-            </div>
           </motion.div>
         )}
       </AnimatePresence>

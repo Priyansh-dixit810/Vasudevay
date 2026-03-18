@@ -10,6 +10,8 @@ import {
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { useThemeStore } from "@/store/theme";
+import { usePathname } from "next/navigation";
+import { useLoadingStore } from "@/store/loading";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -18,10 +20,13 @@ const montserrat = Montserrat({
 
 export default function Footer() {
   const isDark = useThemeStore((s) => s.theme) === "dark";
-
   const themeTransition = "transition-colors duration-700";
   const textColor = isDark ? "text-gray-300 hover:text-white" : "text-gray-600 hover:text-black";
   const headingColor = isDark ? "text-white" : "text-black";
+  const hasFinishedLoading = useLoadingStore((s) => s.hasFinishedLoading);
+  const path = usePathname();
+  const shouldShow = path !== "/" || hasFinishedLoading;
+  if(!shouldShow) return null;
 
   return (
     <footer
