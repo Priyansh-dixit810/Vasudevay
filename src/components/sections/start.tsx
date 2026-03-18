@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Start() {
   const isDark = useThemeStore((s) => s.theme) === "dark";
   return (
-    <div className="relative w-full h-full md:h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={isDark ? "dark" : "light"}

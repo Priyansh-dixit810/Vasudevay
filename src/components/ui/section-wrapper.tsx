@@ -9,7 +9,7 @@ export default function SectionWrapper({ children, id }: { children: React.React
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 1 }}
-      className="h-screen w-full snap-start"
+      className="min-h-screen w-full snap-start flex flex-col"
     >
       {children}
     </motion.section>

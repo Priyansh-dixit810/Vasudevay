@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import IntroLoader from "@/components/sections/intro-loader";
 import Header from "@/components/layout/header";
-import Hero from "@/components/sections/hero"; 
+import Hero from "@/components/sections/hero";
 import { useThemeStore } from "@/store/theme";
 import SectionWrapper from "@/components/ui/section-wrapper";
 import Start from "@/components/sections/start";
@@ -16,12 +16,14 @@ export default function Page() {
   const isDark = useThemeStore((s) => s.theme) === "dark";
 
   return (
-    <main className={`min-h-screen transition-colors duration-700 ${isDark ? "bg-black/70 text-white" : "bg-white text-black"}`}>
+    <main
+      className={`min-h-screen transition-colors duration-700 ${isDark ? "bg-black/70 text-white" : "bg-white text-black"}`}
+    >
       <AnimatePresence mode="wait">
         {loading ? (
           <IntroLoader key="loader" onFinish={() => setLoading(false)} />
         ) : (
-          <motion.div 
+          <motion.div
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -29,20 +31,27 @@ export default function Page() {
             className="relative h-full"
           >
             <Header />
-            <div id="hero" className="snap-start min-h-screen relative ">
-              <Hero/>
+
+            <SectionWrapper id="hero">
+              {" "}
+              <Hero />{" "}
+            </SectionWrapper>
+
+            <SectionWrapper id="start">
+              {" "}
+              <Start />{" "}
+            </SectionWrapper>
+
+            {/* About can now grow as long as it needs to */}
+            <SectionWrapper id="aboutus">
+              {" "}
+              <About />{" "}
+            </SectionWrapper>
+
+            {/* The Footer stays below everything naturally */}
+            <div className="snap-start">
+              <Footer />
             </div>
-            <div className="snap-start h-screen relative overflow-hidden">
-              <SectionWrapper id="start">
-                 <Start />
-              </SectionWrapper>
-            </div>
-            <div className="snap-start h-screen relative">
-              <SectionWrapper id="aboutus">
-                 <About />
-              </SectionWrapper>
-            </div>
-            <Footer />
           </motion.div>
         )}
       </AnimatePresence>
