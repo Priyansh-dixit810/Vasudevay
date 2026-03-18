@@ -13,7 +13,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="min-h-screen w-full pt-20 overflow-x-hidden px-5 sm:px-6 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20 lg:miin-h-screen flex flex-col gap-12 md:gap-10 overflow-hidden">
+    <section className="min-h-screen w-full pt-20 overflow-x-hidden px-5 sm:px-6 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20 lg:h-screen flex flex-col gap-12 md:gap-10 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 md:gap-12">
         <div className="lg:col-span-9 flex flex-col gap-5 md:gap-7 text-center lg:text-left">
           <motion.h1
@@ -72,7 +72,7 @@ export default function Hero() {
               className={`text-sm cursor-pointer sm:text-base md:text-2xl border-2 px-6 sm:px-8 md:px-14 py-2.5 sm:py-3 transition-transform active:scale-95 ${
                 isDark
                   ? "bg-white text-black border-white"
-                  : "bg-black text-white border-black"
+                  : "bg-black/70 text-white border-black"
               }`}
             >
               Start Project
