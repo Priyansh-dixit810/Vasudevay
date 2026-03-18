@@ -9,6 +9,7 @@ import { useThemeStore } from "@/store/theme";
 import SectionWrapper from "@/components/ui/section-wrapper";
 import Start from "@/components/sections/start";
 import About from "@/components/sections/about";
+import Footer from "@/components/layout/footer";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -41,6 +42,7 @@ export default function Page() {
                  <About />
               </SectionWrapper>
             </div>
+            <Footer />
           </motion.div>
         )}
       </AnimatePresence>

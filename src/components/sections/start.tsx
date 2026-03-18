@@ -76,9 +76,6 @@ export default function Start() {
               delay: 0.3,
               ease: [0.22, 1, 0.36, 1],
             }}
-            /* - Added hover effects and better touch target sizing
-       - Changed from a simple border-b to something more interactive
-    */
             className="mt-4 cursor-pointer text-xs sm:text-sm uppercase tracking-[0.3em] border-b border-white/40 pb-2 hover:border-white transition-colors duration-300"
           >
             Get in touch
