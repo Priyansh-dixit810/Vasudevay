@@ -53,7 +53,6 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 flex flex-col">
-        {/* Top Tagline */}
         <div className="flex items-center justify-center px-6 py-12 text-center md:px-12 border-b border-transparent">
           <p
             className={`${montserrat.className} max-w-2xl text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] md:text-base ${themeTransition} ${
@@ -64,9 +63,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Main Grid */}
         <div className="grid grid-cols-1 gap-y-12 gap-x-6 px-6 py-16 sm:grid-cols-2 md:px-12 lg:grid-cols-5">
-          {/* Brand Section */}
           <div className="flex flex-col gap-4 lg:col-span-1">
             <h1
               className={`${montserrat.className} text-2xl uppercase tracking-[0.3em] md:text-3xl ${themeTransition} ${headingColor}`}
@@ -128,10 +125,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div
           className={`border-t px-6 py-8 md:px-12 ${themeTransition} ${
-            isDark ? "border-gray-800 bg-black/40" : "border-gray-200 bg-white/40"
+            isDark ? "border-gray-800 bg-black" : "border-gray-200 bg-white"
           }`}
         >
           <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center md:justify-between">

@@ -5,6 +5,7 @@ import { Instagram, Linkedin, Twitter } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { useThemeStore } from "@/store/theme";
+import { teamMembers } from "@/lib/team";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -15,32 +16,6 @@ const playfair = Playfair_Display({
 export default function About() {
   const isDark = useThemeStore((s) => s.theme) === "dark";
   const router = useRouter();
-  const teamMembers = [
-    {
-      src: "/images/me.png",
-      name: "ID Kritika Kaushik",
-      role: "Interior Designer",
-      instagram: "https://www.instagram.com/creatikaaaa/",
-      linkedin: "https://www.linkedin.com/in/kritika-kaushik-a965b1243/",
-      twitter: "",
-    },
-    {
-      src: "/images/me.png",
-      name: "Ar. Sejal Kaushik",
-      role: "Urban Planner",
-      instagram: "https://www.instagram.com/sejalkaushikk/",
-      twitter: "",
-      linkedin: "https://www.linkedin.com/in/ar-sejal-kaushik/",
-    },
-    {
-      src: "/images/me.png",
-      name: "Ar. Omkar Malgave",
-      role: "Architect",
-      instagram: "https://www.instagram.com/ar.omkar_malgave_09/",
-      twitter: "",
-      linkedin: "https://www.linkedin.com/in/omkar-malgave/",
-    },
-  ];
 
   return (
     <section 
@@ -97,7 +72,8 @@ export default function About() {
               <div className={`group relative aspect-6/5 sm:aspect-4/5 md:aspect-4/3 overflow-hidden rounded-sm shadow-2xl ${
                 isDark ? "bg-neutral-900" : "bg-gray-200"
               }`}
-              onClick={()=> router.push("/about")}>
+              
+              onClick={()=> router.push(`/about/${member.slug}`)}>
                 <Image
                   src={member.src}
                   alt={member.name}
