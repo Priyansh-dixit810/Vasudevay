@@ -4,31 +4,39 @@ import { useLoadingStore } from "@/store/loading";
 import { useThemeStore } from "@/store/theme";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 function Header() {
   const toggleTheme = useThemeStore((s) => s.toggleTheme);
   const isDark = useThemeStore((s) => s.theme) === "dark";
   const pathname = usePathname();
-  const hasFinishedLoading = useLoadingStore((s)=>s.hasFinishedLoading);
+  const hasFinishedLoading = useLoadingStore((s) => s.hasFinishedLoading);
   const shouldShow = pathname !== "/" || hasFinishedLoading;
+  const resetLoading = useLoadingStore((s) => s.resetLoading);
 
+  useEffect(() => {
+    if (pathname === "/") {
+      resetLoading();
+    }
+  }, [pathname, resetLoading]);
   if (!shouldShow) return null;
-  
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
       className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-10 border-b z-50 transition-colors duration-500
-      ${isDark ? " bg-black/70/80 text-white border-white/10 backdrop-blur-md" : "bg-white/80 text-black border-black/5 backdrop-blur-md"}`}
+      ${isDark ? " bg-black/70 text-white border-white/10 backdrop-blur-md" : "bg-white/80 text-black border-black/5 backdrop-blur-md"}`}
     >
-      <button 
-      onClick={() => {
-            document
-              .getElementById("hero")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-      className="text-xl tracking-[0.3em] font-light uppercase select-none" >
+      <button
+        onClick={() => {
+          document
+            .getElementById("hero")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="text-xl tracking-[0.3em] font-light uppercase select-none"
+      >
         OSKAD
       </button>
 
