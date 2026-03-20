@@ -20,7 +20,7 @@ export default function About() {
   return (
     <section 
       className={`min-h-screen relative w-full px-4 pb-4 sm:px-6 lg:px-8 transition-colors duration-700 ${
-        isDark ? "bg-black/70" : "bg-white"
+        isDark ? "bg-black" : "bg-white"
       }`}
     >
       <div 

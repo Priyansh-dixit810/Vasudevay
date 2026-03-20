@@ -65,14 +65,14 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.8 }}
             className="flex justify-center lg:justify-start"
           >
             <button
               className={`text-sm cursor-pointer sm:text-base md:text-2xl border-2 px-6 sm:px-8 md:px-14 py-2.5 sm:py-3 transition-transform active:scale-95 ${
                 isDark
                   ? "bg-white text-black border-white"
-                  : "bg-black/70 text-white border-black"
+                  : "bg-black text-white border-black"
               }`}
             >
               Start Project

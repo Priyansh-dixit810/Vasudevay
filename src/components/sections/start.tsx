@@ -28,7 +28,7 @@ export default function Start() {
           />
           <div
             className={`absolute inset-0 transition-colors duration-700 ${
-              isDark ? "bg-black/70/40" : "bg-black/70/20"
+              isDark ? "bg-black/70" : "bg-white/10"
             }`}
           />
         </motion.div>

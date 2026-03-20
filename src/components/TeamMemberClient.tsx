@@ -5,6 +5,7 @@ import { TeamMember } from "@/lib/team";
 import { Montserrat } from "next/font/google";
 import { useThemeStore } from "@/store/theme";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -30,14 +31,20 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
       }`}
     >
       <motion.div className="min-h-[70vh] md:h-[70vh] w-full flex p-4 flex-col md:flex-row">
-        <motion.img
+        <motion.div
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2 }}
-          src={member?.src}
-          alt={member?.name || "Member Image"}
-          className="h-[42vh] md:h-full w-full md:w-1/3 object-cover hover:scale-101 transition-all hover:grayscale-0 grayscale-50 duration-500 ease-out"
-        />
+          className="h-[42vh] md:h-full w-full md:w-1/3 overflow-hidden"
+        >
+          <Image
+            src={member?.src}
+            alt={member?.name || "Member Image"}
+            width={800}
+            height={1000}
+            className="h-full w-full object-cover hover:scale-101 transition-all hover:grayscale-0 grayscale-50 duration-500 ease-out"
+          />
+        </motion.div>
 
         <motion.div className="flex-1 flex w-full">
           <motion.div
@@ -133,7 +140,7 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
               </motion.h1>
 
               <motion.p
-                className={`${montserrat.className} text-sm md:text-base leading-7 md:leading-8 opacity-80 max-w-5xl text-justify ${
+                className={`${montserrat.className} text-xs md:text-base leading-6 md:leading-8 opacity-80 max-w-5xl text-justify ${
                   isDark ? "text-white/80" : "text-black/80"
                 }`}
               >
@@ -151,7 +158,7 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
               </motion.h1>
 
               <motion.p
-                className={`${montserrat.className} text-sm md:text-base leading-7 md:leading-8 opacity-80 max-w-5xl text-justify ${
+                className={`${montserrat.className} text-xs md:text-base leading-6 md:leading-8 opacity-80 max-w-5xl text-justify ${
                   isDark ? "text-white/80" : "text-black/80"
                 }`}
               >

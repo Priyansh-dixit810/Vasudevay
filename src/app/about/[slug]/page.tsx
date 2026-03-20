@@ -13,7 +13,6 @@ export default async function TeamMemberPage({ params }: PageProps){
     if (!member) {
         notFound();
     }
-    console.log(member)
     return(
         <TeamMemberClient member={member}/>
     )

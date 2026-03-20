@@ -9,6 +9,7 @@ import SectionWrapper from "@/components/ui/section-wrapper";
 import Start from "@/components/sections/start";
 import About from "@/components/sections/about";
 import { useLoadingStore } from "@/store/loading";
+import Steps from "@/components/sections/steps";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,13 @@ export default function Page() {
     >
       <AnimatePresence mode="wait">
         {loading ? (
-          <IntroLoader key="loader" onFinish={() => {setLoading(false); setFinished()}} />
+          <IntroLoader
+            key="loader"
+            onFinish={() => {
+              setLoading(false);
+              setFinished();
+            }}
+          />
         ) : (
           <motion.div
             key="content"
@@ -30,19 +37,18 @@ export default function Page() {
             className="relative h-full"
           >
             <SectionWrapper id="hero">
-              <Hero /> 
+              <Hero />
             </SectionWrapper>
 
             <SectionWrapper id="start">
-               
-              <Start /> 
+              <Start />
             </SectionWrapper>
-
+            <SectionWrapper id="steps" fullHeight={false}>
+              <Steps />
+            </SectionWrapper>
             <SectionWrapper id="aboutus">
-               
-              <About /> 
+              <About />
             </SectionWrapper>
-
           </motion.div>
         )}
       </AnimatePresence>
