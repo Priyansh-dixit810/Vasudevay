@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TeamMember } from "@/lib/team";
 import { Montserrat } from "next/font/google";
 import { useThemeStore } from "@/store/theme";
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,6 +16,7 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
 
   const socials = [
     { icon: <Instagram size={18} />, link: member.instagram },
+    { icon: <Facebook size={18} />, link: member.facebook },
     { icon: <Twitter size={18} />, link: member.twitter },
     { icon: <Linkedin size={18} />, link: member.linkedin },
   ];

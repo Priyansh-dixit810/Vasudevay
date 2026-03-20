@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation"; 
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { useThemeStore } from "@/store/theme";
@@ -108,6 +108,14 @@ export default function About() {
                   className="hover:text-gray-400 transition-colors"
                 >
                   <Instagram size={15} />
+                </a>
+                <a 
+                  href={member.facebook} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-400 transition-colors"
+                >
+                  <Facebook size={15} />
                 </a>
                 <a 
                   href={member.twitter} 
