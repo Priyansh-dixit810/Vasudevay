@@ -133,7 +133,7 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
               </motion.h1>
 
               <motion.p
-                className={`${montserrat.className} text-sm md:text-base leading-7 md:leading-8 opacity-80 max-w-4xl ${
+                className={`${montserrat.className} text-sm md:text-base leading-7 md:leading-8 opacity-80 max-w-5xl text-justify ${
                   isDark ? "text-white/80" : "text-black/80"
                 }`}
               >
@@ -151,7 +151,7 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
               </motion.h1>
 
               <motion.p
-                className={`${montserrat.className} text-sm md:text-base leading-7 md:leading-8 opacity-80 max-w-4xl ${
+                className={`${montserrat.className} text-sm md:text-base leading-7 md:leading-8 opacity-80 max-w-5xl text-justify ${
                   isDark ? "text-white/80" : "text-black/80"
                 }`}
               >
