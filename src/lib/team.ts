@@ -49,7 +49,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     slug: "omkar-malgave",
-    src: "/images/me.png",
+    src: "/images/omkarMalgave.png",
     name: "Omkar Malgave",
     role: "Architect",
     facebook: "",
@@ -58,10 +58,10 @@ export const teamMembers: TeamMember[] = [
     twitter: "https://www.instagram.com/creatikaaaa/",
     bio: "Architect focused on clarity of form, spatial storytelling, and contemporary design.",
     description:
-      "Omkar approaches architecture through clean forms, clear visual language, and spatial experiences that combine functionality with strong design character.",
+      "Omkar Malgave is an Architect and Construction Management professional with 4+ years of experience across residential, commercial, industrial, and aviation sectors, specializing in design execution and project delivery through integrated architectural and PMC services.",
     about:
-      "Omkar Malgave is an architect with a strong focus on clean design language and meaningful spatial experiences. His work explores the relationship between form, function, and human interaction. He believes architecture should tell a story — one that is expressed through proportions, materials, and light. His design approach is rooted in simplicity, precision, and a deep understanding of how spaces are perceived and used.",
+      "onstruction Management professional, with a strong foundation in both design and execution. With a Bachelor of Architecture and an MBA in Advanced Construction Management from NICMAR University, his work is driven by an integrated approach that combines creative design thinking with technical precision. He has gained experience across diverse sectors including residential, commercial, industrial, and aviation infrastructure, with exposure to projects in India as well as international contexts such as the Middle East and Southeast Asia. His approach focuses on bridging the gap between concept and construction, ensuring that design intent is effectively translated into built form. Recognized for his performance and contributions, he has received accolades including Rising Star of the Year (2023–24) and multiple design competition wins. His work is centered on delivering efficient, buildable, and high-quality solutions, with a strong emphasis on coordination, execution, and performance-driven design.",
     experience:
-      "Omkar has worked on architectural projects that range from conceptual design to execution-level detailing. His experience includes residential and mixed-use developments, where he has contributed to design ideation, 3D visualization, and technical drawings. He is particularly interested in modern architectural practices and continuously refines his approach by studying evolving global design trends while maintaining contextual relevance.",
+      "Omkar Malgave has developed extensive experience across the complete project lifecycle, working on projects that range from architectural design to on-site execution. With over four years of professional experience, he has worked across residential, commercial, industrial, and aviation sectors, contributing to projects in both Indian and international contexts. His work includes architectural design, master planning, interior planning, construction management, and project management consultancy, along with detailed documentation and coordination with contractors, consultants, and authorities. He has been actively involved in managing complex, multi-disciplinary developments, ensuring seamless integration between design and execution. With strong on-site experience, he has overseen structural works, finishing, and services integration, while maintaining control over timelines, quality, and project delivery. His experience also includes handling approvals, tender documentation, and construction drawings, ensuring compliance with standards and project requirements. His approach reflects a balance between design intent and practical execution, focusing on precision, efficiency, and delivering projects that are both functional and well-resolved.",
   },
 ];

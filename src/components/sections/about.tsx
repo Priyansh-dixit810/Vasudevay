@@ -78,7 +78,7 @@ export default function About() {
                   src={member.src}
                   alt={member.name}
                   fill
-                  className="object-cover transition-all duration-1000 ease-out group-hover:scale-105"
+                  className="object-cover transition-all duration-1000 grayscale ease-out group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

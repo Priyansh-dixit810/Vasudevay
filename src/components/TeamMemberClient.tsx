@@ -31,12 +31,12 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
     >
       <motion.div className="min-h-[70vh] md:h-[70vh] w-full flex p-4 flex-col md:flex-row">
         <motion.img
-          initial={{ scale: 1.1, opacity: 0 }}
+          initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2 }}
           src={member?.src}
           alt={member?.name || "Member Image"}
-          className="h-[42vh] md:h-full w-full md:w-1/3 object-cover"
+          className="h-[42vh] md:h-full w-full md:w-1/3 object-cover hover:scale-101 transition-all hover:grayscale-0 grayscale-50 duration-500 ease-out"
         />
 
         <motion.div className="flex-1 flex w-full">
@@ -60,7 +60,7 @@ function TeamMemberClient({ member }: { member: TeamMember }) {
               className="flex flex-col gap-1"
             >
               <h1
-                className={`${montserrat.className} uppercase font-bold tracking-wide text-3xl md:text-5xl lg:text-7xl ${
+                className={`${montserrat.className} uppercase font-bold tracking-wide text-3xl md:text-4xl lg:text-7xl ${
                   isDark ? "text-white" : "text-black"
                 }`}
               >
