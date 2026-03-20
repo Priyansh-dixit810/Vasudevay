@@ -1,6 +1,5 @@
 import TeamMemberClient from "@/components/TeamMemberClient";
 import { teamMembers } from "@/lib/team";
-import { motion } from "framer-motion";
 import { notFound } from "next/navigation";
 type PageProps ={
     params : Promise<{

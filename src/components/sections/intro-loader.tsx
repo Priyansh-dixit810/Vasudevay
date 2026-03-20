@@ -9,7 +9,7 @@ function IntroLoader({ onFinish }: { onFinish: () => void }) {
   useEffect(() => {
     const finish = setTimeout(() => {
       onFinish();
-    }, 1800);
+    }, 2200);
 
     return () => clearTimeout(finish);
   }, [onFinish]);
