@@ -64,9 +64,9 @@ export function GetInTouchDialog({ open, onOpenChange }: Props) {
         return;
       }
       const res = await submitContactForm(result.data);
-      if (res?.statusText == "OK") {
+      
         setSubmitResponse(res.data.message);
-      }
+      
     } catch (e) {
       console.log(e);
     } finally {

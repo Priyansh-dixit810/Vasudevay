@@ -1,4 +1,3 @@
-import { submitContactForm } from "@/api/contact";
 import { useThemeStore } from "@/store/theme";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
