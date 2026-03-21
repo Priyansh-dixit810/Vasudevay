@@ -1,8 +1,15 @@
+import { submitContactForm } from "@/api/contact";
 import { useThemeStore } from "@/store/theme";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { GetInTouchDialog } from "../dialogs/get-in-touch";
 
 export default function Start() {
+  const [dialogOpen,setDialogOpen] = useState<boolean>(false);
+  const handleDialogOpen = async () => {
+    setDialogOpen(true);
+  }
   const isDark = useThemeStore((s) => s.theme) === "dark";
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
@@ -76,12 +83,14 @@ export default function Start() {
               delay: 0.3,
               ease: [0.22, 1, 0.36, 1],
             }}
+            onClick={()=>handleDialogOpen()}
             className="mt-4 cursor-pointer text-xs sm:text-sm uppercase tracking-[0.3em] border-b border-white/40 pb-2 hover:border-white transition-colors duration-300"
           >
             Get in touch
           </motion.button>
         </motion.div>
       </AnimatePresence>
+      <GetInTouchDialog open={dialogOpen} onOpenChange={()=>setDialogOpen(false)}/>
     </div>
   );
 }

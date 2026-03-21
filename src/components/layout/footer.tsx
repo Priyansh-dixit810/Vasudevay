@@ -79,7 +79,7 @@ export default function Footer() {
               className={`flex flex-col gap-2 text-[10px] sm:text-xs leading-relaxed ${themeTransition} ${isDark ? "text-gray-400" : "text-gray-500"}`}
             >
               <p>One Stop for Konstruction Architecture and Design</p>
-              <p className="mt-2 font-medium">oskad1234@gmail.com</p>
+              <p className="mt-2 font-medium">oskad1403@gmail.com</p>
             </div>
           </div>
 

@@ -85,7 +85,7 @@ function Steps() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-10"
+              className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 xl:gap-10"
             >
               {steps.map((step) => {
                 const Icon = step.icon;
